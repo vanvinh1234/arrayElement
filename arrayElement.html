@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS bin</title>
+    <style>
+        .content {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+Sample screen:<br>
+<input type="text" id="txtValue">
+<input type="button" value="Add" id="btnAdd" onclick="add_element_to_array()" >
+<input type="button" value="Display" id="btnDisplay" onclick="display_array()">
+<div id="result"></div>
+</div>
+<script>
+    let x=0;
+    let array=Array();
+    function add_element_to_array() {
+       array[x]=document.getElementById("txtValue").value;
+       alert(" Element " + array[x] + " Add at index " + x)
+        x++;
+       document.getElementById("txtValue").value="";
+    }
+    function display_array() {
+        let e ="<hr/>";
+        for(i=0;i< array.length; i++){
+            e += "Element " + i + "=" + array[i] +"<br/>";
+        }document.getElementById("result").innerHTML=e
+    }
+</script>
+</body>
+</html>
